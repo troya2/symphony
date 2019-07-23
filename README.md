@@ -1,13 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+World Symphony is an app to help LoLa users find one another.
 
-Things you may want to cover:
+Over time, we will add to this file to include items such as:
 
-* Ruby version
-
-* System dependencies
 
 * Configuration
 
