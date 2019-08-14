@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-light
+%nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-purple
   =link_to root_path, class:'navbar-brand' do
     =image_tag 'Logo idea 1.png', height: 40
   %button.navbar-toggler{type: :button, data:{toggle: :collapse, target:'#navbar-content'}}
@@ -12,6 +12,10 @@
       %li.nav-item=link_to 'LoLa Nodes', nodes_path, class:'nav-link' + (current_page?(controller: :nodes) ? ' active' : '')
       %li.nav-item=link_to 'Profile', profile_path(0), class:'nav-link' + (current_page?(controller: :profile, action: :show) ? ' active' : '')
     %ul.navbar-nav
-      %li.nav-item
+      %li.nav-item.d-none.d-lg-block
+        %span.navbar-text.text-light Hello someone@somewhere.com!
+      %li.nav-item.d-none.d-lg-block=link_to "Logout", '#', class:'btn btn-sm btn-outline-light ml-2 mt-1'
+
+      %li.nav-item.d-lg-none
         %span.navbar-text Hello someone@somewhere.com!
-      %li.nav-item=link_to "Logout", '#', class:'btn btn-sm btn-outline-danger ml-2 mt-1'
+      %li.nav-item.d-lg-none=link_to "Logout", '#', class:'btn btn-sm btn-outline-dark ml-2 mt-1'
