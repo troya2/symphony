@@ -1,0 +1,17 @@
+%nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-light
+  =link_to root_path, class:'navbar-brand' do
+    =image_tag 'Logo idea 1.png', height: 40
+  %button.navbar-toggler{type: :button, data:{toggle: :collapse, target:'#navbar-content'}}
+    %span.navbar-toggler-icon
+
+  .collapse.navbar-collapse#navbar-content
+    %ul.navbar-nav.mr-auto
+      %li.nav-item=link_to 'Matching', matchings_path, class:'nav-link'
+      %li.nav-item=link_to 'Messaging', '#', class:'nav-link'
+      %li.nav-item=link_to 'Reservations', '#', class:'nav-link'
+      %li.nav-item=link_to 'Nodes', '#', class:'nav-link'
+      %li.nav-item=link_to 'Profile', '#', class:'nav-link active'
+    %ul.navbar-nav
+      %li.nav-item
+        %span.navbar-text Hello someone@somewhere.com!
+      %li.nav-item=link_to "Logout", '#', class:'btn btn-sm btn-outline-danger ml-2 mt-1'
