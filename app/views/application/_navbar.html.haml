@@ -6,11 +6,11 @@
 
   .collapse.navbar-collapse#navbar-content
     %ul.navbar-nav.mr-auto
-      %li.nav-item=link_to 'Matching', matchings_path, class:'nav-link'
-      %li.nav-item=link_to 'Messaging', '#', class:'nav-link'
-      %li.nav-item=link_to 'Reservations', '#', class:'nav-link'
-      %li.nav-item=link_to 'Nodes', '#', class:'nav-link'
-      %li.nav-item=link_to 'Profile', '#', class:'nav-link active'
+      %li.nav-item=link_to 'Matching', matchings_path, class:'nav-link' + (current_page?(controller: :matchings) ? ' active' : '')
+      %li.nav-item=link_to 'Messaging', messages_path, class:'nav-link' + (current_page?(controller: :messages) ? ' active' : '')
+      %li.nav-item=link_to 'Reservations', reservations_path, class:'nav-link' + (current_page?(controller: :reservations) ? ' active' : '')
+      %li.nav-item=link_to 'LoLa Nodes', nodes_path, class:'nav-link' + (current_page?(controller: :nodes) ? ' active' : '')
+      %li.nav-item=link_to 'Profile', profile_path(0), class:'nav-link' + (current_page?(controller: :profile, action: :show) ? ' active' : '')
     %ul.navbar-nav
       %li.nav-item
         %span.navbar-text Hello someone@somewhere.com!

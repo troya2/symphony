@@ -1,0 +1,31 @@
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header Known LoLa Nodes
+        .card-body
+          %table.table
+            %thead
+              %tr
+                %th{scope: :col} Name
+                %th{scope: :col} City
+                %th{scope: :col} State
+                %th{scope: :col} Description
+                %th{scope: :col}
+                %th{scope: :col}
+                %th{scope: :col}
+
+            %tbody
+              - @nodes.each do |node|
+                %tr
+                  %td= node.name
+                  %td= node.city
+                  %td= node.state
+                  %td= node.description
+                  %td= link_to 'Show', node
+                  %td= link_to 'Edit', edit_node_path(node)
+                  %td= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' }
+        .card-footer
+          = link_to new_node_path, class:'btn btn-outline-primary' do
+            %i.fa.fa-plus
+            New Node

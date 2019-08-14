@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        %h2.card-header=@node.name
+        .card-body
+          %p
+            %b City:
+            = @node.city
+          %p
+            %b State:
+            = @node.state
+          %p
+            %b Description:
+            = @node.description
+        .card-footer
+          = link_to 'Edit', edit_node_path(@node)
+          \|
+          = link_to 'Back', nodes_path
