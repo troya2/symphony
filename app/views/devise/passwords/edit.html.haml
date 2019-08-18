@@ -1,0 +1,35 @@
+= content_for :page_title, 'Set Your Password'
+= content_for :page_description, 'Set your password'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Set Your Password
+        .card-body
+          = form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |f|
+            = devise_error_messages!
+            = f.hidden_field :reset_password_token
+            .form-group
+              %label Your Password
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :password, class: "form-control", autofocus: true, autocomplete: :off, placeholder: "Enter a password#{@minimum_password_length ? " (#{@minimum_password_length} characters minimum)" : ''}"
+
+            .form-group
+              %label Password Confirmation
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :password_confirmation, autocomplete: :off, class: "form-control", placeholder: "Confirm password by retyping"
+
+            = f.submit "Set My Password", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"

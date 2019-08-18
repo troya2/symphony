@@ -1,0 +1,19 @@
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        %h2.card-header Your Profile
+        .card-body
+          %p
+            %b First Name:
+            = @user.first_name
+          %p
+            %b Last Name:
+            = @user.last_name
+          %p
+            %b Email:
+            = @user.email
+        .card-footer
+          = link_to 'Edit', edit_profile_path
+          \|
+          = link_to 'Change passowrd', edit_user_registration_path

@@ -1,0 +1,45 @@
+= content_for :page_title, 'Edit Your Password'
+= content_for :page_description, 'Edit your account password'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Edit Your Password
+        .card-body
+          = form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f|
+            = devise_error_messages!
+            .form-group
+              %label Current Password
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :current_password, autocomplete: :off, class: "form-control", placeholder: "Confirm existing password"
+
+            .form-group
+              %label Change Password (leave blank if you do not want to change your password)
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :password, autocomplete: :off, class: "form-control", placeholder: "Enter a NEW password#{@minimum_password_length ? " (#{@minimum_password_length} characters minimum)" : ''}"
+
+            .form-group
+              %label Change Password Confirmation
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :password_confirmation, autocomplete: :off, class: "form-control", placeholder: "Confirm NEW password by retyping"
+
+            = f.submit "Update Password Information", class: %w(btn btn-primary)
+            =link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: %w(btn btn-outline-danger float-right)
+
+        .card-footer
+          = link_to "Back", :back
+          = render "devise/shared/links"

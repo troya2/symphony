@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users,
+    path_names: { sign_in: 'login', sign_out: 'logout' },
+    controllers: { confirmations: 'users/confirmations' }
 
   authenticated :user do
-    root to: 'profile#show'
+    root to: 'profiles#show'
   end
   root to: 'public#about', as: :public_landing_page
 
@@ -11,6 +13,5 @@ Rails.application.routes.draw do
   resources :messages
   resources :nodes
   resources :reservations
-  resources :profile
-
+  resource :profile
 end

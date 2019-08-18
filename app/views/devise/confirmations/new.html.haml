@@ -1,0 +1,25 @@
+= content_for :page_title, 'Resend Confirmation Email'
+= content_for :page_description, 'Resend your confirmation email'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Resend Confirmation
+        .card-body
+          = form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post } do |f|
+            = devise_error_messages!
+            .form-group
+              %label Email Address
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-envelope
+                = f.email_field :email, autofocus: true, class: "form-control", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "Enter your email address"
+
+            = f.submit "Resend Confirmation Email", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"

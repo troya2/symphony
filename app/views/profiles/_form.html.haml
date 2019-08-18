@@ -1,0 +1,36 @@
+-# frozen_string_literal: true
+= form_for @user, url: profile_path do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited your profile from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+
+  .form-group
+    = f.label :first_name
+    .input-group
+      .input-group-prepend
+        %span.input-group-text
+          %span.icon.is-small.is-left
+            %i.fa.fa-user
+      = f.text_field :first_name, class:'form-control', placeholder: 'Your first name'
+  .form-group
+    = f.label :last_name
+    .input-group
+      .input-group-prepend
+        %span.input-group-text
+          %span.icon.is-small.is-left
+            %i.fa.fa-user
+      = f.text_field :last_name, class:'form-control', placeholder: 'Your last name'
+  .form-group
+    = f.label :email
+    .input-group
+      .input-group-prepend
+        %span.input-group-text
+          %span.icon.is-small.is-left
+            %i.fa.fa-envelope
+      = f.text_field :email, class:'form-control', placeholder: 'Your email'
+
+  .actions
+    = f.submit 'Save Your Profile', class:'btn btn-outline-primary'

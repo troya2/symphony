@@ -1,0 +1,9 @@
+- if flash.present?
+  - flash.each do |key, value|
+    - next if key.to_sym == :timedout
+    - severity_class = {error:'alert-danger', alert:'alert-primary', success:'alert-success'}[key.to_sym] || 'alert-primary'
+
+    .alert.alert-dismissible.fade.show{class: severity_class, role: :alert}
+      =value.html_safe
+      %button.close{type: :button, data: {dismiss: :alert}, aria: {label: 'Close'}}
+        %span{aria:{hidden:true}} &times;

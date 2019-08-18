@@ -1,0 +1,26 @@
+= content_for :page_title, 'Resend Unlock Instructinos'
+= content_for :page_description, 'Resend Unlock Instructions'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Resend Unlock Instructions
+        .card-body
+          = form_for resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+            = devise_error_messages!
+
+            .form-group
+              %label Email Address
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-envelope
+                = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter your email address"
+
+            = f.submit "Resend Unlock Instructions", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"

@@ -1,0 +1,40 @@
+= content_for :page_title, 'Sign in to your Run Book'
+= content_for :page_description, 'Sign in to your Run Book'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Login to your #{appname}
+        .card-body
+          = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+            = devise_error_messages!
+            .form-group
+              %label Email Address
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-envelope
+                = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter your email address"
+
+            .form-group
+              %label Password
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-lock
+                = f.password_field :password, class: "form-control", placeholder: "Enter your password"
+
+            - if devise_mapping.rememberable?
+              .form-group
+                .form-check
+                  = f.check_box :remember_me, class: "form-check-input"
+                  %label.form-check-label Remember me
+
+            = f.submit "Sign in", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"

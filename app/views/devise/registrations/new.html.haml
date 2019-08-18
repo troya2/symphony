@@ -1,0 +1,25 @@
+= content_for :page_title, 'New User Registration'
+= content_for :page_description, 'Sign up for a new account'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Sign up for #{appname}
+        .card-body
+          = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+            = devise_error_messages!
+            .form-group
+              %label Email Address
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-envelope
+                = f.email_field :email, class: "form-control", placeholder: "Enter your email address"
+
+            = f.submit "Next", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"

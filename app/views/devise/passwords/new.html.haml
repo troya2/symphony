@@ -1,0 +1,26 @@
+= content_for :page_title, 'Change Password'
+= content_for :page_description, 'Reset a forgotten password'
+
+%section.container.mt-5.mb-5
+  .row.justify-content-center
+    .col-md-8
+      .card
+        .card-header
+          Request Password Change
+        .card-body
+          = form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f|
+            = devise_error_messages!
+
+            .form-group
+              %label Email Address
+              .input-group
+                .input-group-prepend
+                  %span.input-group-text
+                    %span.icon.is-small.is-left
+                      %i.fa.fa-envelope
+                = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter your email address"
+
+            = f.submit "Send Reset Instructions", class: "btn btn-primary"
+
+        .card-footer
+          = render "devise/shared/links"
