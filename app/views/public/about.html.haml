@@ -4,31 +4,32 @@
 	.row
 .col-12
 .bd-example
-	#carouselExampleCaptions.carousel.slide{"data-ride" => "carousel"}
+	#carouselExampleCaptions.carousel.slide{data:{ride: :carousel}}
 		%ol.carousel-indicators
-			%li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleCaptions"}
-			%li{"data-slide-to" => "1", "data-target" => "#carouselExampleCaptions"}
-			%li{"data-slide-to" => "2", "data-target" => "#carouselExampleCaptions"}
-		.carousel-inner
+			%li.active{data:{'slide_to': 0, target: "#carouselExampleCaptions"}}
+			%li{data:{'slide-to': 1, target: "#carouselExampleCaptions"}}
+			%li{data:{'slide-to': 2, target: "#carouselExampleCaptions"}}
+		.carousel-inner{style: 'height: 500px'}
 			.carousel-item.active
-				%img.d-block.w-100{:alt => "...", :src => "..."}/
+				=image_tag 'stefany-andrade-GbSCAAsU2Fo-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-260px'
 				.carousel-caption.d-none.d-md-block
-					%h5 First slide label
-					%p Nulla vitae elit libero, a pharetra augue mollis interdum.
-			.carousel-item
-				%img.d-block.w-100{:alt => "...", :src => "..."}/
-				.carousel-caption.d-none.d-md-block
-					%h5 Second slide label
+					%h5 Stefany Andrade
 					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			.carousel-item
+				=image_tag 'cristina-gottardi-6JcFz_34qUM-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-120px'
 				%img.d-block.w-100{:alt => "...", :src => "..."}/
 				.carousel-caption.d-none.d-md-block
-					%h5 Third slide label
+					%h5 Cristina Gottardi
 					%p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-		%a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleCaptions", :role => "button"}
+			.carousel-item
+				=image_tag 'jefferson-santos-fCEJGBzAkrU-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-260px'
+				.carousel-caption.d-none.d-md-block
+					%h5 Jefferson Santos
+					%p Nulla vitae elit libero, a pharetra augue mollis interdum.
+		=link_to '#carouselExampleCaptions', class:'carousel-control-prev', data:{slide: :prev}, role: :button do
 			%span.carousel-control-prev-icon{"aria-hidden" => "true"}
 			%span.sr-only Previous
-		%a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleCaptions", :role => "button"}
+		=link_to '#carouselExampleCaptions', class:'carousel-control-next', data:{slide: :next}, role: :button do
 			%span.carousel-control-next-icon{"aria-hidden" => "true"}
 			%span.sr-only Next
 		.col-12
