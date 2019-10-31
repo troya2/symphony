@@ -8,7 +8,7 @@
     %ul.navbar-nav.mr-auto
       - if user_signed_in?
         %li.nav-item=link_to 'Matching', matchings_path, class:'nav-link' + (controller_name ==  'matchings' ? ' active' : '')
-        %li.nav-item=link_to 'Messaging', messages_path, class:'nav-link' + (controller_name ==  'messages' ? ' active' : '')
+        %li.nav-item=link_to 'Messaging', rooms_path, class:'nav-link' + (controller_name ==  'rooms' ? ' active' : '')
         %li.nav-item=link_to 'Reservations', reservations_path, class:'nav-link' + (controller_name ==  'reservations' ? ' active' : '')
         %li.nav-item=link_to 'LoLa Nodes', nodes_path, class:'nav-link' + (controller_name == 'nodes' ? ' active' : '')
         %li.nav-item=link_to 'Profile', profile_path, class:'nav-link' + (controller_name == 'profiles' ? ' active' : '')

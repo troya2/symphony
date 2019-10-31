@@ -7,3 +7,11 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   background: linear-gradient(90deg, white, #D3BFE8, #6819B5)
 }
 
+.room-nav-link {
+  border: 1px solid lighten($primary, 40%);
+  background: lighten($primary, 45%);
+
+  & + .room-nav-link {
+    border-top: 0 none;
+  }
+}
