@@ -1,6 +1,6 @@
 # README
 
-World Symphony is an app to help LoLa users find one another.
+LoLaConnect is an app to help LoLa users find one another.
 
 Over time, we will add to this file to include items such as:
 
