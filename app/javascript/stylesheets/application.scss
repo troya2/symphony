@@ -1,12 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+$base-color: #ffffff;
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import 'nodes';
 @import 'matching';
 
 .bg-purple {
-  background: linear-gradient(90deg, white, #D3BFE8, #6819B5)
+  background: linear-gradient(90deg, #ffeded, #D3C6D9, #b83dba)
 }
 
 .room-nav-link {
