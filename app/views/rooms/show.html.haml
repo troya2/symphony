@@ -6,11 +6,11 @@
         = render partial: 'rooms'
 
     .col
-        %ul.list-group
+        %ul.list-group.chat{data:{"channel-subscribe": "room", "room-id": @room.id}}
             - @room.room_messages.each do |room_message|
                 %li.list-group-item
                     .row.no-gutters
-                        .col-3.text-center= image_tag gravatar_url(room_message.user), class: 'avatar'
+                        .col-3.text-center= image_tag room_message.user.gravatar_url, class: 'avatar'
                         .col-auto.mb-1= room_message.message
                         .col.text-right
                             %small= room_message.created_at
@@ -27,3 +27,11 @@
                     = form.submit "Send", class: 'btn btn-primary chat-input'
 
                 = form.input :room_id, as: :hidden
+
+.d-none{data:{role: "message-template"}}
+    %li.list-group-item
+        .row.no-gutters
+            .col-3.text-center= image_tag "", class: 'avatar', data:{role: "user-avatar"}
+            .col-auto.mb-1{data: {role: "message-text"}}
+            .col.text-right
+                %small{data: {role: "message-date"}}
