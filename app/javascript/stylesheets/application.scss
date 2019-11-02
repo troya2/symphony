@@ -2,6 +2,7 @@
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
+@import 'about';
 
 .bg-purple {
   background: linear-gradient(90deg, white, #D3BFE8, #6819B5)
