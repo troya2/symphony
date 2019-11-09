@@ -7,10 +7,11 @@
 /* Gallery Section */
 
 .gallery {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     margin: -1rem -1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .gallery-item {
