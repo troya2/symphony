@@ -1,5 +1,4 @@
-%h1.bg-purple{style: "color: rgb(100, 10, 140)"} Coming Soon!
-%p Find me in app/views/public/about.html.haml
+%h1.bg-purple{style: "color: rgb(100, 10, 140)"} 
 .container
 	.row
 .col-12
@@ -13,44 +12,42 @@
 			.carousel-item.active
 				=image_tag 'stefany-andrade-GbSCAAsU2Fo-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-260px'
 				.carousel-caption.d-none.d-md-block
-					%h5 Stefany Andrade
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					%h5 Connect
 			.carousel-item
 				=image_tag 'cristina-gottardi-6JcFz_34qUM-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-120px'
 				%img.d-block.w-100{:alt => "...", :src => "..."}/
 				.carousel-caption.d-none.d-md-block
-					%h5 Cristina Gottardi
-					%p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+					%h5 Collaborate
 			.carousel-item
 				=image_tag 'jefferson-santos-fCEJGBzAkrU-unsplash.jpg', class:'d-block w-100', style:'position: relative; top:-260px'
 				.carousel-caption.d-none.d-md-block
-					%h5 Jefferson Santos
-					%p Nulla vitae elit libero, a pharetra augue mollis interdum.
+					%h5 Compose
 		=link_to '#carouselExampleCaptions', class:'carousel-control-prev', data:{slide: :prev}, role: :button do
 			%span.carousel-control-prev-icon{"aria-hidden" => "true"}
 			%span.sr-only Previous
 		=link_to '#carouselExampleCaptions', class:'carousel-control-next', data:{slide: :next}, role: :button do
 			%span.carousel-control-next-icon{"aria-hidden" => "true"}
 			%span.sr-only Next
-		.col-12
-			carousel
+
+
+
 	.row
 		.col-12
-			%h4 Welcome to LoLa Connect!
+			%h4{:style => "color:#b83dba"} Welcome to LoLa Connect!
 	.row
-		.col-4
+		.col-4{:style => "color:#b83dba"}
 			Connect
 			%ul
 				%li Through LoLa nodes
 				%li Across the country
 				%li With new people
-		.col-4
+		.col-4{:style => "color:#b83dba"}
 			Collaborate
 			%ul
 				%li With other musicians
 				%li Over real time connection
 				%li To create the never before seen
-		.col-4
+		.col-4{:style => "color:#b83dba"}
 			Compose
 			%ul
 				%li Music using the latest tech
