@@ -10,8 +10,9 @@
       - @rooms.each do |room|
         .card-text
           = link_to room_path(room), class: 'nav-link room-nav-link' do
-            %i.fa.fa-comments.fa-outline
+            %i.fa.fa-comments
             = room.name
+
       .card-footer
         .text-center
           = link_to new_room_path, class: 'btn btn-primary' do

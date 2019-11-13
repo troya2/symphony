@@ -1,4 +1,12 @@
-.form-style{:style => "color:#b83dba;"}
-	= simple_form_for @room do |form|
-		= form.input :name
-		= form.submit "Save", class: 'btn btn-success'
+.col-12
+  = form_for @room do |f|
+    .form-group
+      = f.label :name
+      .input-group
+        .input-group-prepend
+          %span.input-group-text
+            %span.icon.is-small.is-left
+              %i.fa.fa-comments
+        = f.text_field :name, class:'form-control', placeholder: 'Room Name'
+    .actions
+      = f.submit 'Create Room', class:'btn btn-outline-primary'
