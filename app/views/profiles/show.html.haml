@@ -3,16 +3,16 @@
     .col-md-8{:style => "background-color:#F7E6E9"}
       .card{:style => "text-align: center"}
       %h2.card-header{:style => "color:#b83dba"} Your Profile
-      %h2{:style => "background-color:#F7E6E9"}
+      %h2
         .card-body
           %p
-            %b First Name:
+            %b{:style => "color:#b83dba"}  First Name:
             = @user.first_name
           %p
-            %b Last Name:
+            %b{:style => "color:#b83dba"}  Last Name:
             = @user.last_name
           %p
-            %b Email:
+            %b{:style => "color:#b83dba"}  Email:
             = @user.email
         .card-footer{:style => "background-color:#F7E6E9"}
           = link_to 'Edit', edit_profile_path

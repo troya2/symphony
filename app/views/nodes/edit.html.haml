@@ -1,8 +1,8 @@
 %section.container.mt-5.mb-5
   .row.justify-content-center
     .col-md-8
-      .card
-        .card-header Editing node
+      .card{:style => "background-color:#f7e6e9"}
+        .card-header{:style => "color:#b83dba"}Editing node
         .card-body= render 'form'
         .card-footer
           = link_to 'Show', @node

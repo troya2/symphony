@@ -1,4 +1,12 @@
-.mb-3
+.col
+    .alert.alert-primary{:style => "background-color:#F7E6E9;"}
+        .h4-style 
+            %h4.alert-heading{:style => "color:#b83dba;"}
+                Welcome!
+            %p
+                Create or open a chat below.
+
+.mb-3{:style => "color:#b83dba;"}
     = link_to new_room_path, class: 'btn btn-primary' do
         Create a room
 - if @rooms.present?
@@ -9,9 +17,3 @@
     .text-muted
         There are no rooms
 
-.col
-    .alert.alert-primary
-        %h4.alert-heading
-            Welcome
-        %p
-            Create or join a chat from the sidebar.
