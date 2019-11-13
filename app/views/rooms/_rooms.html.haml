@@ -1,19 +1,23 @@
-.col
-    .alert.alert-primary{:style => "background-color:#F7E6E9;"}
-        .h4-style 
-            %h4.alert-heading{:style => "color:#b83dba;"}
-                Welcome!
-            %p
-                Create or open a chat below.
+.card.mt-3.mb-3
+  .card-body
+    %h4.card-title Welcome to LoLa Chat!
+    .card-text Join in on a chat below.
 
-.mb-3{:style => "color:#b83dba;"}
-    = link_to new_room_path, class: 'btn btn-primary' do
-        Create a room
 - if @rooms.present?
-    %nav.nav.flex-column
-        - @rooms.each do |room|
-            = link_to room.name, room_path(room), class: 'nav-link room-nav-link'
+  %nav.nav.flex-column.card
+    .card-body
+      .card-title Existing Rooms
+      - @rooms.each do |room|
+        .card-text
+          = link_to room_path(room), class: 'nav-link room-nav-link' do
+            %i.fa.fa-comments.fa-outline
+            = room.name
+      .card-footer
+        .text-center
+          = link_to new_room_path, class: 'btn btn-primary' do
+            %i.fa.fa-plus
+            Create a New Room
 - else
-    .text-muted
-        There are no rooms
+  .text-muted
+    There are no rooms
 

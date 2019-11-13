@@ -13,4 +13,12 @@ $base-color: #ffffff;
 }
 $accent: #b83dba;
 
-
+.card-body {
+  background-color:#F7E6E9;
+  .card-title {
+    color: #b83dba;
+  }
+  a.nav-link.room-nav-link {
+    background-color: #fee;
+  }
+}
