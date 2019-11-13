@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     controllers: { confirmations: 'users/confirmations' }
 
   authenticated :user do
-    root to: 'profiles#show'
+    root to: 'rooms#index'
   end
   root to: 'public#about', as: :public_landing_page
 
